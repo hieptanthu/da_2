@@ -1,0 +1,138 @@
+
+.header{
+    background-color: rgb(33, 153, 172);
+    width: 100%;
+    display: flex;
+    color: #f7f3f3;
+
+}
+
+.header>div{
+   align-items: center;
+   justify-content: space-between;
+   
+}
+
+
+
+.header_1{
+   padding: 10px;
+}
+
+
+.header_2 h1{
+    padding: 10px;
+    font-size: 40px;
+
+ }
+
+ .header_3{
+    display: flex;
+ }
+
+ .header_3>div{
+    flex: 1;
+    margin: 0 10px;
+ }
+
+
+ 
+.logo{
+    width: 100px;
+    text-align: center;
+    background-color: rgb(33, 153, 172);
+    margin: 5px;
+}
+.imgUser{
+    height: 20px;
+    border-radius: 50%;
+}
+
+#User{
+    position: relative;
+}
+
+
+#User:hover>.sua {
+    display: block;
+}
+
+
+#User >.sua
+{
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    color: #000;
+    top: 55px;
+    display: none;
+}
+
+
+#User >.sua>li:hover,#User >.sua>li:hover>a
+{
+   background-color: rgb(33, 153, 172);
+   color: #f9f9f9;
+}
+
+
+
+#User >.sua>li
+{
+   margin: 10px 0;
+
+}
+
+
+#User >.sua>li>a
+{
+    color: #000;
+   
+}
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: relative;
+    display: inline-block;
+  }
+  
+  li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: rgb(33, 153, 172);
+   color: #f9f9f9;
+  }
+
+
+
+  ul>li>ul{
+    
+    background-color: rgb(33, 153, 172);
+    display: none;
+    position: relative;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+
+
+
+  ul>li:hover>ul{
+    
+        display: block;
+  }

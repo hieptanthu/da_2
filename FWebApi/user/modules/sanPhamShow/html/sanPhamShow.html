@@ -1,0 +1,81 @@
+
+
+    <div class="container">
+        
+        <script type="module"  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="module" src="/assets/js/api/SanPham.js"></script>
+        <script type="module" src="/assets/js/api/global.js"></script>
+        <script type="module" src="/assets/js/BienThamChieu/BienThamChieuSearch.js"></script>
+        <script type="module" src="/modules/GioHang/js/js.js"></script>
+        <script type="module"  src="/modules/sanPhamShow/js/SanPham.js"></script>
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/modules/sanPhamShow/css/styleSanPham.css">
+        <div class="cps-container">
+            <div id="BoLoc">
+                <div>
+                    <label for="Locgia">Giá:</label>
+                    <select  id="Locgia" name="Locgia">
+                        <option value="1">tất cả</option>
+                        <option value="2">Dưới 2 triệu</option>
+                        <option value="3">2 đến 5 triệu </option>
+                        <option value="4">5 đến 10 triệu </option>
+                        <option value="5">10 đến 20 triệu </option>
+                        <option value="6">trên 20 triệu </option>
+                    </select>
+
+                </div>
+                <div class="box-order-item">
+                    <label for="LocthuongHieu">Thương Hiêu:</label>
+                    <select  id="LocthuongHieu" name="LocthuongHieu">
+                        <option value="">tất cả</option>
+
+                    </select>
+
+                </div>
+                <div>
+                    <label class="right" for="LocXapXep">Sắp Xếp:</label>
+                    <select  id="LocXapXep" name="LocXapXep">
+                        <option value="">ngẫu nghiên</option>
+                        <option value="1">từ thấp đến cao</option>
+                        <option value="2">từ cao đến thấp</option>
+                        <option value="3">cũ nhất</option>
+                        <option value="4">mới nhất</option>
+                    </select>
+
+                </div>
+
+                <div>
+                    <label  for="LocloaiHang">Sắp Xếp:</label>
+                    <select  id="LocloaiHang" name="LocloaiHang">
+                        <option value="">tất cả</option>
+                        <option value="0">Mới</option>
+                        <option value="1">Cũ</option>
+                    </select>
+
+                </div>
+            </div>
+            <div id="DsSanPham">
+                
+                
+            </div>
+
+           
+            <ul id="page_SanPham" class="pagination">
+                
+                
+            </ul>
+
+           
+           
+            
+
+
+            
+        </div>
+
+    
+
+        
+        
+        
+    </div>

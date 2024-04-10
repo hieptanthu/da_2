@@ -1,0 +1,109 @@
+.XepHang{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 0 40px 0;
+}
+
+.xepHangSp{
+    background-image: url(/assets/img/img_chicago.jpg);
+}
+
+.list{
+    margin: 100px 0 0 0;
+    padding: 0 0 0 30px;
+    width: 500px;
+    background-color: #fff;
+    position: relative;
+}
+
+.list .list-header {
+    position: absolute;
+    top: -90px;
+    left: 0;
+    color: rgb(245, 238, 238);
+}
+
+.list .item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1px 20px;
+    position: relative;
+    border-bottom: 2px dashed #ffb8b8;
+
+}
+.list .item .img{
+    position: absolute;
+    float: right;
+    width: 80px;
+    height: 120px;
+    text-align: center;
+    top: 15px;
+    right: 100px;
+}
+
+
+.list .item img{
+width: 130px;
+position: absolute;
+transform: perspective(80px) rotateY(-10deg) ;
+
+}
+
+.list .item p{
+   margin: 0px;
+    
+    }
+
+.list .item .info h1{
+    line-height: 60px; /* Căn giữa theo chiều dọc (chiều cao cố định) */
+    height: 60px; /* Chiều cao cố định cho div */
+    padding:  0 0 0 10px;
+  
+}
+.list .item .info h2{
+    line-height: 60px; /* Căn giữa theo chiều dọc (chiều cao cố định) */
+    height: 60px; /* Chiều cao cố định cho div */
+    padding:  0 0 0 10px;
+    margin: 0 0 0 0;
+    
+    color: #686161;
+  
+}
+
+
+
+.index {
+    
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    font-weight: 600;
+    text-align: center;
+    color: #6b9876;
+}
+
+
+.index-1{
+    border-radius: 50%;
+    background-color: #edb800;
+    color: #fff;
+}
+
+.index-2{
+    border-radius: 50%;
+    background-color: #0073b9;
+    color: #fff;
+}
+.index-3{
+    border-radius: 50%;
+    background-color: #6b9876;
+    color: #fff;
+}
+
+
+

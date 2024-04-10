@@ -1,0 +1,187 @@
+<div class="container">
+    <div class="cps-container">
+        <section class="main">
+            <link rel="stylesheet" href="/modules/GioHang/css/style.css">
+            <link rel="stylesheet" href="/assets/css/style.css">
+            <script type="module"  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script type="module" src="/assets/js/Cookie.js"></script>
+            <script type="module" src="/assets/js/api/SanPham.js"></script>
+            <script type="module" src="/assets/js/BienThamChieu/BienThamChieu.js"></script>
+            <script type="module" src="/assets/js/api/global.js"></script>
+            <script type="module" src="/assets/js/BienThamChieu/BienThamChieuSearch.js"></script>
+            <script type="module"  src="/modules/GioHang/js/js.js"></script>
+            
+            <div class="title">Giỏ hàng</div>
+            <div class="row">
+                <div class=" padding-table">
+                    <table class="table-prod">
+                        <thead>
+                            <tr>
+                                <th>Chọn All <input type="checkbox" id="checkAll" onclick="chonTatCa()"></th>
+                                <th >SẢN PHẨM</th>
+                                <th>Tên sản phẩm</th>
+                                <th>GIÁ</th>
+                                <th>SỐ LƯỢNG</th>
+                                <th>TẠM TÍNH</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listCart">
+                            
+                        </tbody>
+                    </table>
+                    <div class="update">
+                        <button onclick="hienThi()">Cập nhật giỏ hàng</button>
+                        <button onclick="deleteSp()">Xóa đã chọn</button>
+                    </div>
+                </div>
+                <div class="right padding-table">
+                    <table class="table-right">
+                        <thead>
+                            <th class="title">Tổng tiền</th>
+                            <th>VND</th>
+
+    
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tổng</td>
+                                <td class="price" id="spTong">0</td>
+                            </tr>
+
+                        </tbody>
+                        
+                    </table>
+                    <div class="pay">
+                        <button onclick="LaySpThanhToan()">Tiến hành thanh toán</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    
+    
+
+    <script>
+
+        function tinhTongTamTinh() {
+        var tong = 0;
+        var listTamTinh = document.querySelectorAll('#listCart td:nth-child(6)');
+
+        listTamTinh.forEach(function (tamTinh) {
+            var gia = parseFloat(tamTinh.textContent.replace('₫', '').replace(/\./g, ''));
+            tong += gia;
+            document.getElementById("spTong").textContent=tong.toLocaleString() + '₫';
+        });}
+        
+        document.addEventListener("DOMContentLoaded", function() {
+
+
+            var soNhapInputs = document.querySelectorAll("#listCart .soNhap");
+
+            // Gắn sự kiện "input" cho mỗi ô nhập số
+            soNhapInputs.forEach(function (input) {
+            input.addEventListener("input", function () {
+                // Lấy hàng chứa ô nhập số hiện tại
+                var row = input.closest("tr");
+
+                // Lấy số lượng từ ô nhập số
+                var soLuong = parseInt(input.value);
+
+                // Lấy giá tiền từ thẻ td thứ 4 trong hàng hiện tại
+                var giaTien = parseFloat(row.querySelector("td:nth-child(4)").textContent.replace('₫', '').replace(/\./g, ''));
+                var dataId = row.querySelector("td:nth-child(1) input.chonMot").getAttribute('data-Id');
+                SuaSanPham(dataId,soLuong);
+                console.log("k");
+                // Tính tổng tiền (giá tiền * số lượng)
+                var tongTien = giaTien * soLuong;
+
+                // In tổng tiền vào thẻ td thứ 6 trong hàng hiện tại
+                row.querySelector("td:nth-child(6)").textContent = tongTien.toLocaleString() + '₫';
+                tinhTongTamTinh();
+                
+
+            });
+
+           
+        });
+
+        });
+      // Lấy tất cả các ô nhập số trong tbody có id là "listCart"
+        
+        
+        window.onload = tinhTongTamTinh;
+
+
+
+
+        // Chọn tất cả
+        function chonTatCa() {
+        var checkAll = document.getElementById('checkAll');
+        var checkboxes = document.querySelectorAll('.chonMot');
+
+        checkboxes.forEach(function (checkbox) {
+            checkbox.checked = checkAll.checked;
+        });
+    }
+
+
+
+    function deleteSp(){
+        var checkboxes = document.querySelectorAll('.chonMot');
+
+        // Duyệt qua từng checkbox
+        checkboxes.forEach(function (checkbox) {
+
+            // In giá trị vào console (bạn có thể sử dụng giá trị này theo nhu cầu của mình)
+            var isChecked = checkbox.checked; // Check if the checkbox is checked
+
+            if (isChecked) {
+                var dataId = checkbox.getAttribute('data-Id');
+                if(xoaSanPham(dataId)==true){
+                    var row = checkbox.closest('tr');
+                    row.parentNode.removeChild(row);
+                }else{
+                    alert("Bị lỗi ở đâu đó");
+                }
+            }
+
+            // Nếu bạn muốn sử dụng giá trị trong một hàm khác, bạn có thể truyền giá trị đó vào hàm đó
+            // ví dụ: tenHàmKhac(dataId);
+        });
+        alert("Xóa thành công");
+    }
+
+    function LaySpThanhToan(){
+        var checkboxes = document.querySelectorAll('.chonMot');
+        var listId=[]
+        // Duyệt qua từng checkbox
+        checkboxes.forEach(function (checkbox) {
+
+            // In giá trị vào console (bạn có thể sử dụng giá trị này theo nhu cầu của mình)
+            var isChecked = checkbox.checked; // Check if the checkbox is checked
+
+            if (isChecked) {
+                var dataId = checkbox.getAttribute('data-Id');
+                listId.push(dataId)
+                
+            }
+
+            // Nếu bạn muốn sử dụng giá trị trong một hàm khác, bạn có thể truyền giá trị đó vào hàm đó
+            // ví dụ: tenHàmKhac(dataId);
+        });
+
+        dsSanPhamMua(listId)
+    }
+
+
+
+    </script>
+    
+    
+</div>
+
+
+...

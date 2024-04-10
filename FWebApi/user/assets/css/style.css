@@ -1,0 +1,67 @@
+#root{
+    
+    font-size: 20px;
+    height: 1000px;
+    z-index: 2;
+    
+    
+}
+.container {
+    margin: 0 auto;
+}
+
+
+.cps-container {
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    width: 1200px;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    
+  }
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-left: 13%;
+}
+.row2 {
+    display: flex;
+    justify-content: space-between; 
+}
+
+
+.row2 {
+    display: flex;
+    justify-content: space-between; 
+}
+
+
+ul{
+    list-style-type: none;
+}
+
+
+.none{
+    display: none;
+}
+
+
+
+
+

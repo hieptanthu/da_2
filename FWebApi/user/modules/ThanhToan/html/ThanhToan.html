@@ -1,0 +1,118 @@
+<div class="container">
+
+    
+
+
+    
+    <script type="module"  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="/modules/ThanhToan/js/js.js"></script>
+    <script type="module" src="/assets/js/api/HoaDon.js"></script>
+    <script type="module" src="/assets/js/Cookie.js"></script>
+    <script type="module" src="/assets/js/BienThamChieu/BienThamChieu.js"></script>
+    <link rel="stylesheet" href="/modules/ThanhToan/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script>
+
+	
+	</script>
+    <div class="cps-container">
+        <section class="main">
+            <div class="row">
+                <div class="col-8 col-s-12 padding-form">
+                    <div class="title">THÔNG TIN THANH TOÁN</div>
+                    <div class=note>(<span>*</span>) Bắt buộc</div>
+                    <form action="#" onsubmit="return DatHang()" method="post">
+
+
+                        <div class="row">
+                            <div class="col-12 col-s-12">
+                                <label for="txt_hoten">Họ tên: <span>*</span></label><br>
+                                <input type="text" id="txt_hoten">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-s-12">
+                                <label for="txt_sdt">Số điện thoại: <span>*</span></label><br>
+                                <input type="text" id="txt_sdt">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-s-12">
+                                <label for="txt_email">Email:</label><br>
+                                <input type="text" id="txt_email">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-s-12">
+                                <select class="form-select form-select-sm mb-3" id="city" aria-label=".form-select-sm">
+                                    <option value="" selected>Chọn tỉnh thành</option>           
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-s-12">
+                                <select class="form-select form-select-sm mb-3" id="district" aria-label=".form-select-sm">
+                                    <option value="" selected>Chọn quận huyện</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <select class="form-select form-select-sm" id="ward" aria-label=".form-select-sm">
+                                <option value="" selected>Chọn phường xã</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-s-12">
+                                <label for="txt_ghichu">Ghi chú:</label><br>
+                                <textarea id="txt_ghichu" cols="135" rows="1"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4 col-s-12 padding-form">
+                    <div class="title">ĐƠN HÀNG</div>
+                    <div class="row pay" style="border-bottom: 3px solid #dbdbdb;">
+                        <div class="col-6 col-s-12" style="text-align: left;">
+                            <label>Sản phẩm</label>
+                        </div>
+                        <div class="col-6 col-s-12" style="text-align: right;">
+                            <label>Tổng</label>
+                        </div>
+                    </div>
+                    <div id="spham"></div>
+                    
+                    <div class="row trace">
+                        <div class="col-6 col-s-12" style="text-align: left;">
+                            <label>Tổng</label>
+                        </div>
+                        <div class="col-6 col-s-12" style="text-align: right;">
+                            <label id="tt">0</label>đ
+                        </div>
+                    </div>
+                    <div class="row pay">
+                        <div class="col-12 col-s-12" style="text-align: left;">
+                            <button onclick="DatHang()">ĐẶT HÀNG</button>
+                        </div>
+                    </div>
+                    <div class="row pay">
+                        <form action="#">
+                            <div class="payments">
+                                <input checked="true" type="radio" id="tienmat" name="payments" value="tm" class="radio-payments">
+                                <label for="tienmat" class="label-payments">Thanh toán tiền mặt khi nhận hàng (tiền mặt /
+                                    quẹt thẻ ATM, Visa, Master)</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+    </div>
+    
+</div>
+
+
+

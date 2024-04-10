@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="/assets/css/Header.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/js/chuyenTrang.js"></script>
+    <script type="module"  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="/assets/js/Cookie.js"></script>
+    <script type="module" src="/assets/js/page.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="container-wrapper">
+                <div class="header">
+                    <div class="header_1">
+                        <img class="logo" src="./assets/images/logo.png" alt="">
+                    </div>
+                    <div class="header_2">
+                        <h1> Quản Trị viên</h1>
+                    </div>
+                    <div id="User" class="header_3">
+                       <div>
+                            <h3>hello</h3>
+                        </div>
+                       <div class="img" >
+                            <img class="imgUser" src="./assets/images/logo.png" alt="">
+                        </div>
+                        <ul class="sua">
+                            <li><a href="">đổi mật khẩu</a></li>
+                            <li><a href="">đổi thông tin</a></li>
+                            <li><a onclick="dangXuat()">đăng xuất</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class=".container-wrapper">
+            <div class="menu">
+                <ul>
+                    <li><a onclick="themModule('trangChu')" >Home</a></li>
+                    
+                    <li>
+                        <a>Thông tin chung</a>
+
+                        <ul>
+                            <li><a href="#" onclick=" themModule('SanPham')" >Quản lý San Pham</a></li>
+                            <li><a href="">Quản lý Hóa đơn nhập</a></li>
+                            <li><a href="">Quản lý bài viết</a></li>
+                        </ul>
+                        
+                    </li>
+                    <li>
+                        <a >Quản lý đơn</a>
+                        <ul>
+                            <li><a onclick=" themModuleHD('HoaDonChoXacNhan')">đơn hàng chưa xác nhận</a></li>
+                            <li><a onclick=" themModuleHD('hoaDonChoGuiHang')">đơn hàng đã xác nhận</a></li>
+                            <li><a onclick=" themModuleHD('HoaDondangGiao')">đơn hàng đang giao</a></li>
+                            <li><a onclick=" themModuleHD('hoaDonDaXong')">đơn hàng đã giao</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a >Thống kê</a>
+                        <ul>
+                            <li><a onclick=" themModuleThongKe('ThongKeKhachHangTiemNang')">Khách Hàng Tiềm năng</a></li>
+                            <li><a onclick=" themModuleThongKe('ThongKeSanPhamBanChay')">Sản phẩm Bán chạy</a></li>
+                            <li><a onclick=" themModuleThongKe('ThongkeSanPhamDoanhThu')">Doanh Thu Sản Phẩm</a></li>
+                            <li><a onclick=" themModuleThongKe('ThongkeSanPhamQuanTam')">Sản phẩm Quan Tâm</a></li>
+                        </ul>
+                    </li>
+                    <li><a onclick=" themModule('User')" href="#about">User</a></li>
+                  </ul>
+            </div>
+
+            <div id="main" class="main">
+                
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function dangXuat(){
+            window.location = "/pageHtml/logGin.html";
+        }
+    </script>
+
+</body>
+</html>

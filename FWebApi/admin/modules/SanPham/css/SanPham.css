@@ -1,0 +1,191 @@
+.tenSanPham {
+    text-align: center;
+
+}
+
+
+
+#thuongHieu,#thuongHieutk{
+min-width: 200px;
+}
+
+#danhMuc,#danhMuctk{
+    min-width: 200px;
+}
+
+
+#SanPham{
+    z-index: 3;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4)
+}
+
+
+
+
+
+
+
+
+
+
+
+#SanPham .SanPham-body>div{
+    display:inline-grid;
+    width: 33%;
+}
+
+
+
+
+#SanPham>div {
+    width: 60%;
+    background-color: white;
+    margin: 10% auto;
+    padding-top: 25px;
+}
+
+
+#SanPham .SanPham-btn{
+   margin-top: 20px;
+   border-top: 1px solid;
+   height: 60px;
+
+
+}
+
+#btnOK {
+    font-size: 30px;
+    float: right;
+    margin: 10px;
+    width: 250px;
+}
+#btnThoat {
+    width: 150px;
+    font-size: 25px;
+    margin: 12px;
+}
+
+
+#my-dropzone {
+    z-index: 4;
+    display: none; 
+    padding-top: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(219 40 40);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.parameters{
+    background-color: bisque;
+}
+
+
+
+.headerLink{
+    padding:20px 0px;
+    background-color: #f1f1f1;
+    text-align: center; 
+    
+     
+}
+
+
+.headerLink>div {
+    
+    margin:-10px 0 0  0;
+}
+
+.headerLink >.duong-dan {
+    float: left;
+    color: rgb(113, 120, 117);
+
+}
+
+
+.headerLink >.duong-dan>ul{
+    display: flex;
+
+}
+.headerLink >.duong-dan>ul>li{
+    margin: 0 10px;
+    
+}
+
+.headerLink >.duong-dan a{
+    float: left;
+    color: rgb(113, 120, 117);
+
+}
+
+
+.headerLink>.them {
+
+    float: right;
+   
+
+}
+
+
+.headerLink>.them>input {
+    padding: 6px 37px;
+    
+}
+
+.timKiem
+{
+    margin: 0 0;
+
+}
+
+
+.timKiem>form{
+    width: 50%;
+    font-size: 24px;
+}
+
+
+.timKiem>form>input{
+    font-size: 24px;
+}
+
+.timKiem>form>select{
+    font-size: 24px;
+}
+#btnTimKiem {
+    float: right;
+    width: 100px;
+    height: 50px;
+}
+
+
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+td>img
+{
+    width: 100px;
+    border: 1px solid;
+    border-radius: 6px;
+}
+
+.ds{
+    border-top: 1px solid;
+    margin: 5% 0 0 0;
+}
+
+
+

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+	<link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="/Đồ án 2/Css/Login.css">
+    <script type="module"  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="/assets/js/api/global.js"></script>
+    <script type="module" src="/assets/js/api/acc.js"></script>
+    <script type="module" src="/assets/js/Cookie.js"></script>
+   
+</head>
+<body>
+
+    <style>
+        body {
+	font-family: sans-serif;	
+	background-image: url(./wp2417153.webp);
+	background-repeat: no-repeat;
+	overflow: hidden;
+	background-size: cover;
+}
+
+.container {
+	width: 380px;
+	margin:7% auto;
+	border-radius: 25px;
+	background-color: rgba(0,0,0,0.1);
+	box-shadow: 0 0 17px #333;
+}
+
+.header {
+	text-align: center;
+	padding-top: 75px;
+}
+
+.header h1 {
+	color: #333;
+	font-size: 45px;
+	margin-bottom: 80px;
+}
+
+.main {
+	text-align: center;
+}
+
+.main input, button {
+	width: 300px;
+	height: 40px;
+	border:none;
+	outline: none;
+	padding-left: 40px;
+	box-sizing: border-box;
+	font-size: 15px;
+	color: #333;
+	margin-bottom: 40px;
+}
+
+.main button {
+	padding-left: 0;
+	background-color: #83acf1;
+	letter-spacing: 1px;
+	font-weight: bold;
+	margin-bottom: 70px;
+}
+
+.main button:hover {
+	box-shadow: 2px 2px 5px #555;
+	background-color: #7799d4;
+}
+.main input:hover {
+	box-shadow: 2px 2px 5px #555;
+	background-color: #ddd;
+}
+
+.main span {
+	position: relative;
+}
+
+.main i {
+	position: absolute;
+	left: 15px;
+	color: #333;
+	font-size: 16px;
+	top: 2px;
+}
+    </style>
+ <div class="container">
+ 	<div class="header">
+ 		<h1>ĐĂNG NHẬP</h1>
+ 	</div>
+ 	<div class="main">
+ 		<div>
+ 			<span>
+ 				
+ 				<input id="userName" type="text" placeholder="Tên đăng nhập" name="">
+ 			</span><br>
+ 			<span>
+ 				
+ 				<input id="pass" type="password" placeholder="Mật khẩu" name="">
+ 			</span><br>
+ 				<button onclick="LayDaTa()">Đăng nhập</button>
+
+ 		</div>
+ 	</div>
+ </div>
+
+
+ <script type="module">
+    import {Acc} from "../assets/js/api/acc.js"
+    import{setCookie} from "../assets/js/Cookie.js"
+    setCookie('token', JSON.stringify("null"), 7);
+    
+    
+    function login(name,pass){
+        var acc= new Acc();
+        
+        acc.Login(name,pass)
+        .then(function(data) {
+            debugger
+          
+                console.log(data)
+                alert("xin Chào :"+ data.userName.trim())
+                setCookie('idUse', JSON.stringify(data.id), 7);
+                setCookie('token', JSON.stringify(data.token), 7);
+                localStorage.setItem("User",data)
+                window.location="/"               
+            
+        
+            
+        })
+        .catch(function(error) {
+            // Xử lý lỗi ở đây
+           alert("Lỗi đăng nhập")
+           console.error(error)
+        });
+
+    }
+
+    function LayDaTa(){
+        debugger
+        var userName = document.getElementById("userName")
+        var pass = document.getElementById("pass")
+        console.log(pass.value)
+        login(userName.value,pass.value)
+    }
+
+
+    window.LayDaTa=LayDaTa
+    
+
+   
+   
+
+
+</script>
+</body>
+</html>
+    
+
+   

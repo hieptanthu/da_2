@@ -1,0 +1,255 @@
+#DsSanPham{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#BoLoc {
+    position: relative;
+    align-items: center;
+    font-size: 16px;
+    height: 50px;
+    display: flex;
+    margin: 20px;
+    background: #f2f3f7;
+    width: 100%;
+    /* padding: 0; */
+}
+#BoLoc label {
+    margin-left: 20px;
+
+}
+#BoLoc>label {
+    text-transform: uppercase;
+    padding: 11px 10px;
+    font-size: 12px;
+    font-weight: 400;
+    float: left;
+    margin: 0;
+}
+
+.box_order_item {
+    float: left;
+    margin-left: 20px;
+}
+
+.gia,.thuongHieu {
+    padding: 10px;
+    
+    position: relative;
+    z-index: 1;
+    
+}
+
+#BoLoc  select {
+    width: 200px; /* Điều chỉnh chiều rộng của select theo ý muốn */
+    padding: 8px; /* Tăng độ dày của select để nó trở nên to hơn */
+    border-radius: 10px; /* Điều chỉnh độ cong của góc để làm tròn select */
+    border: 1px solid #ccc; /* Thêm đường viền để tạo đường viền xung quanh */
+    outline: none; /* Loại bỏ đường viền mặc định */
+}
+
+.gia ul li, .thuongHieu ul li  {
+    padding: 8px; /* Thêm padding 8px cho mỗi phần tử <li> */
+    /* Các thiết lập CSS khác cho phần tử <li> nếu cần thiết */
+}
+
+
+
+
+.product-item {
+    background-color: #e3e2e2;
+    margin-top: 10px;
+    position: relative;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    transition: transform ease-in 0.1s;
+    will-change: transform;
+    display: block;
+    text-decoration: none;
+
+
+}
+
+.product-item:hover {
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+   
+
+}
+.product-item__img {
+    width: 100%;
+    background-size: contain;
+    padding-top: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.product-item__name {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0px 0px 0 10px;
+    color: black;
+    line-height: 1.8rem;
+    height: 3.6rem;
+    overflow: hidden;
+    display: -webkit-box;
+    width: 200px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+}
+
+.product-item__price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin-left: 10px;
+    font-size : 1.6rem;
+    color : red
+}
+
+
+
+.product-item__action {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 14px 10px;
+}
+
+
+
+.product-item__rating {
+    font-size: 1rem;
+    transform: scale(0.8);
+    transform-origin: right;
+    color: #d5d5d5;
+    margin-left: auto;
+}
+
+.product-item__gold {
+    color : darkred;
+}
+.product-item__sold {
+    font-size: 1.2rem;
+    color : rgb(45, 48, 48);
+    margin-left: 6px;   
+    
+    
+}
+.product-item__bootom {
+    display: flex;
+    justify-content: space-between;
+    margin:0 10px;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+.product-item__favourite {
+    position: absolute;
+    top: 10px;
+    left: -4px;
+    color: #e60202;
+    background-color: currentColor;
+    font-size: 1.2rem;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    font-weight: 500;
+    padding-right: 4px;
+
+}
+.product-item__favourite::after {
+    content: "";
+    position: absolute;
+    border-top: 3.5px solid currentColor ;
+    border-left: 3.5px solid transparent;
+    left: 0;
+    bottom: -3.5px; 
+    filter: brightness(60%);
+}
+.product-item__favourite span {
+    color: white;
+
+}
+.product-item__favourite i {
+    font-size: 0.9rem;
+    margin: 0 5px 2px;
+    color: white;
+
+}
+
+
+
+
+.product__pagination {
+    margin: 48px 0 32px 0;
+}
+
+
+
+
+/* phaan trang */
+
+.pagination {
+    margin-left: 20%;
+}
+  .pagination li {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+  }
+  
+  .pagination li.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+  }
+  
+
+
+
+  .pagination li {
+   float: left;
+  }
+  
+
+
+  .SanPham {
+    margin:  auto;
+}
+
+
+
+/* mua /thêm vào gio hang */
+
+
+.SanPham:hover .buy{
+    display: flex;
+    transition: display 0.3s ease-in-out 0.5s;
+}
+
+.buy {
+    display: flex;
+    margin: 0px;
+    justify-content: space-between;
+    padding: 0px;
+    z-index: 1;
+}
+.buy button {
+    padding: 10px 3px 10px 0;
+    border: none;
+}
+
+
+.themVaoGioHang {
+    background-color: yellow;
+    
+}
+
+
+.Ngay {
+    background-color: red;
+    color: aliceblue;
+}

@@ -1,0 +1,226 @@
+
+    <script type="module"  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/modules/SanPham/css/SanPham.css">
+    <script type="module" src="/assets/js/api/global.js"></script>
+    <script type="module" src="/assets/js/bienThamChieu/ThamChieu.js"></script>
+    <script type="module" src="/assets/js/api/danhMuc.js"></script>
+    <script type="module" src="/assets/js/api/ThuongHieu.js"></script>
+    <script type="module" src="/assets/js/api/SanPham.js"></script>
+    <script type="module" src="/modules/SanPham/js/index.js"></script>
+    <script type="module" src="/assets/js/bienThamChieu/ThamChieuSearch.js"></script>
+   
+    
+
+    <div id="SanPham">
+        <div>
+            <div class="SanPham-body">
+                <div>
+                    <label for="tenSanPham">Tên sản phẩm:</label>
+                    <input type="text" id="tenSanPham" name="tenSanPham" required/>
+                </div>
+                <div>
+                    <label for="moTa">Mô tả sản phẩm:</label>
+                    <input type="text" id="moTa" name="moTa" required/>
+                </div>
+                <div>
+                    <label for="gia">Giá sản phẩm</label>
+                    <input type="text" id="gia" name="gia" required/>
+                </div>
+                
+                <div>
+                    <label for="baoHanh">Bảo hành</label>
+                    <input type="text" id="baoHanh" name="baoHanh" required/>
+
+                </div>
+
+                <div>
+                    <label for="tomtat">Tóm tắt sản phẩm</label>
+                    <input type="text" id="tomtat" name="tomtat" required/>
+
+                </div>
+                
+                <div>
+                    <label for="soluong">Số lượng</label>
+                    <input type="text" id="soluong" name="soluong" required/>
+                </div>
+
+                <div>
+                    <label for="anh">Ảnh</label>
+                    <input  type="text" id="anh" name="anh" required>
+                   
+                </div>
+                
+                <div>
+                    <label for="thuongHieu">Thương hiệu:</label>
+                    <select id="thuongHieu" name="thuongHieu">
+                      
+                    </select>
+
+                </div>
+                
+
+                <div>
+                    <label for="danhMuc">Danh Muc:</label>
+                    <select  id="danhMuc" name="danhMuc">
+                    </select>
+
+                </div>
+                
+                <div>
+                    <label for="danhMuc1">Danh Muc 2:</label>
+                    <select  id="danhMuc1" name="danhMuc1">
+                    </select>
+
+                </div>
+                <div>
+                    <label for="tinhTrang">Tình trạng</label>
+                    <select id="tinhTrang" name="tinhTrang">
+                        <option  value="0">mới</option>
+                        <option  value="1">cũ</option>
+                    </select>
+
+                </div>        
+                
+            </div>
+            <div class="SanPham-btn">
+                <input id="btnThoat" onclick="BoQua()" class="btnThoat" type="submit" value="thoát" >
+                <input id="btnOK" onclick="Gui()" class="btnThem" type="submit" value="Gửi">
+            </div>
+        </div>
+            
+            
+    </div>
+
+    <!-- <div  id="my-dropzone">
+        <table>
+            <tbody>
+                <tr class="parameters" data-property-name="files">
+                    <td class="parameters-col_description">
+                        <div>
+                            <div class="json-schema-array">
+                        
+                            </div>
+                            <button onclick="addInput()" class="btn btn-sm json-schema-form-item-add null button" title="">Add string item</button>
+                        <div>
+                            
+                        </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <button onclick="guiFile()">ok</button>
+    </div> -->
+    <div class="headerLink">
+        <div class="duong-dan">
+            <ul>
+                <li><a href="">Trang chủ</a></li>
+                <li><a>/</a></li>
+                <li><a href="">Sảm phẩm</a></li>
+            </ul>
+
+        </div>
+        <div class="them">
+            <input class="btnThem" type="button"  onclick="document.getElementById('SanPham').style.display='block'" value="Thêm"/>
+        </div>
+
+    </div>
+
+    <div class="body">
+        <div class="timKiem">
+            <form>
+                <label for="tenSanPhamtk">Tên sản phẩm:</label>
+                <input type="text" id="tenSanPhamtk" name="tenSanPham" required><br>
+        
+                <label for="thuongHieutk">Thương hiệu:</label>
+                <select id="thuongHieutk" name="thuongHieu">
+                    <option ma="" value="">tất cả</option>
+                </select><br>
+                <label for="danhMuctk">Danh Muc:</label>
+                <select id="danhMuctk" name="danhMuc">
+                    <option ma="" value="">tất cả</option>
+                </select><br>
+
+
+                <label for="tinhTrangtk">Tình trạng</label>
+                <select id="tinhTrangtk" name="tinhTrang">
+                    <option ma="" value="">tất cả</option>
+                    <option  value="0">mới</option>
+                    <option  value="1">cũ</option>
+                </select><br/>
+    
+        
+                <input id="btnTimKiem" class="btnThem" type="submit" value="Gửi">
+                
+            </form>
+
+        </div>
+
+
+        <div class="ds">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Số thứ tự</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Mô tả sản phẩm</th>
+                        <th>Giá sản phẩm</th>
+                        <th>Bảo hành</th>
+                        <th>Tóm tắt sản phẩm</th>
+                        <th>Loại sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Ngày tạo</th>
+                        <th>Số lượng bán</th>
+                        <th>Ảnh</th>
+                        <th>tác vụ</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Các dòng dữ liệu sẽ được thêm vào đây -->
+                </tbody>
+            </table>
+
+            <ul id="page" class="pagination">
+                
+                
+            </ul>
+        
+        </div>
+        
+    </div>
+
+    <script>
+        var currentInputCount=1;
+
+        function addInput() {
+            
+            currentInputCount+=1
+            $(".json-schema-array").append(`<div  class="json-schema-form-item">
+                                    <input type="file" class="input_img" title="">
+                                    <button class="btn btn-sm json-schema-form-item-remove null button" onclick="removeParentElement(this)" title=""> - </button>
+                                </div>`)
+                                
+        }
+
+        function removeInput(button) {
+            // Lấy thẻ cha của nút "Remove"
+            var jsonSchemaArray = button.parentNode.parentNode;
+
+            // Xóa thẻ input
+            jsonSchemaArray.removeChild(button.parentNode);
+
+            // Giảm số lượng thẻ input đã thêm vào
+            currentInputCount--;
+        }
+
+        function removeParentElement(button) {
+            // Lấy thẻ cha của nút "Remove"
+            var parentDiv = button.parentNode;
+
+            // Xóa thẻ cha
+            parentDiv.parentNode.removeChild(parentDiv);
+        }
+    </script>
+    
